@@ -66,7 +66,7 @@ def readmultichannellabdat(fname,verbose=False):
 # read in data from the scope and make a matrix of values from it
 
     if verbose is True:
-        print fname
+        print(fname)
     tmp=np.loadtxt(fname,skiprows=2,delimiter=',')
     [nt,nch]=np.shape(tmp)
     nch=nch-1
