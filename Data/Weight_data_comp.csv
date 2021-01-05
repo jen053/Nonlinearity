@@ -1,0 +1,13 @@
+Sample,Experimental_state,Pre_sat,Post_sat,Post_dry,Water_infil,Water_remov
+NS1,Initial,1199.4,1255.1,1187.3,55.7,67.8
+NS2,Initial,1233.2,1292.6,1216.1,59.4,76.5
+NS3,Initial,1233.5,1295.3,1222.4,61.8,72.9
+NS4,Initial,1195.3,1253.6,1190.8,58.3,62.8
+NS5,Initial,1247.7,1322.4,1243.3,74.7,79.1
+NS6,Initial,1202.1,1270.2,1198.4,68.1,71.8
+NS1,Fracture,1189.2,1252.4,1187.4,63.2,65
+NS2,Fracture,1225.7,1283.9,1216,58.2,67.9
+NS3,Fracture,1229.5,1285.8,1221.8,56.3,64
+NS4,Fracture,1193.7,1253.7,1190.7,60,63
+NS5,Fracture,1247.1,1309.8,1243.4,62.7,66.4
+NS6,Fracture,,,,,
