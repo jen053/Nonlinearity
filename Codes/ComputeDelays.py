@@ -127,7 +127,7 @@ def writelabdat(fname,dataset,nch=1):
     f.close()
         
    
-def Compute_single_delay(PUMPprobe,probe,PUMP,ch,winlen):
+def Compute_single_delay(PUMPprobe,probe,PUMP,ch,winlen, getCorrels=False):
 #Compute the delay between the perturbed and un-perturbed probe signals
     ch_ind=0
 
@@ -206,18 +206,22 @@ def Compute_single_delay(PUMPprobe,probe,PUMP,ch,winlen):
     tvec_lags_to_fit=tvec_correlation[index_of_timeshift-2:index_of_timeshift+2]
     
     Correlation_to_fit=Correlation_of_probes[index_of_timeshift-2:index_of_timeshift+2]
-    #plt.plot(tvec_lags_to_fit,Correlation_to_fit)
-    #plt.show()
-    
     Fit_to_peak=np.polyfit(tvec_lags_to_fit,Correlation_to_fit,2)
-    #print Fit_to_peak
+    fit = np.poly1d(Fit_to_peak)
+#     xx = np.linspace(min(tvec_lags_to_fit), max(tvec_lags_to_fit), 1000) 
+#     plt.plot(tvec_lags_to_fit,Correlation_to_fit)
+#     plt.plot(xx, fit(xx))
+#     plt.show()
+  
     MaxPeak_from_interpolation=-Fit_to_peak[1]/2/Fit_to_peak[0]
     t_shift=MaxPeak_from_interpolation
-    #print "Fit_to_peak[1]:",Fit_to_peak[1]
-    #print "Fit_to_peak[0]:",Fit_to_peak[0]
-    return t_shift
-
-def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,path,fname_part2,fnameend,winlen,recompute,flipdelays=0,dofilter=0):
+    
+    if getCorrels == True:
+        return t_shift, fit, Correlation_to_fit, tvec_lags_to_fit
+    else:
+        return t_shift
+    
+def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,path,fname_part2,fnameend,winlen,recompute,flipdelays=0,dofilter=0, getCorrels=False):
 
     delayfname=path+'Delays.txt'
 
@@ -249,7 +253,9 @@ def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,p
 
     j=0
     tshift=np.empty(np.shape(delayvec)[0],'float')
-    
+    fits=[]
+    correls=[]
+    lags=[]
     for delay in delayvec:
         #print(delay)
         #fname_pump=path+'pu'+fname_part2+str(int(delay*delay_scale_fact))+fnameend
@@ -265,7 +271,13 @@ def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,p
             readlabdat(fname_pump,PUMP_only[i])
             i=i+1
         #print(PUMP_probe,probe_only,PUMP_only)
-        tshift[j]=Compute_single_delay(PUMP_probe,probe_only,PUMP_only,1,winlen)
+        if getCorrels == True:
+            tshift[j], fit, correl, lag=Compute_single_delay(PUMP_probe,probe_only,PUMP_only,1,winlen,getCorrels=True)
+            fits.append(fit)
+            correls.append(correl)
+            lags.append(lag)
+        else:
+            tshift[j]=Compute_single_delay(PUMP_probe,probe_only,PUMP_only,1,winlen)
         j=j+1
 
     fs=1.0/(delaystep*1.0e-6)
@@ -297,9 +309,11 @@ def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,p
     dat[:,3]=tshifts.remove_noise_trend
     dat[:,4]=tshifts.remove_noise_wiggles
 
-    np.savetxt(delayfname,dat)
-                     
-    return tshifts
+    #np.savetxt(delayfname,dat)
+    if getCorrels == True:                
+        return tshifts, fits, correls, lags
+    else:
+        return tshifts
     
 def Compute_Filter_All_Delays_JIM(delayvec,delay_scale_fact,missing_data,delaystep,path,fname_part2,fnameend,winlen):
 
