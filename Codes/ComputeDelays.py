@@ -217,7 +217,7 @@ def Compute_single_delay(PUMPprobe,probe,PUMP,ch,winlen, getCorrels=False):
     t_shift=MaxPeak_from_interpolation
     
     if getCorrels == True:
-        return t_shift, fit, Correlation_to_fit, tvec_lags_to_fit
+        return t_shift, fit, Fit_to_peak, Correlation_to_fit, tvec_lags_to_fit
     else:
         return t_shift
     
@@ -254,6 +254,7 @@ def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,p
     j=0
     tshift=np.empty(np.shape(delayvec)[0],'float')
     fits=[]
+    params=[]
     correls=[]
     lags=[]
     for delay in delayvec:
@@ -272,8 +273,9 @@ def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,p
             i=i+1
         #print(PUMP_probe,probe_only,PUMP_only)
         if getCorrels == True:
-            tshift[j], fit, correl, lag=Compute_single_delay(PUMP_probe,probe_only,PUMP_only,1,winlen,getCorrels=True)
+            tshift[j], fit, param, correl, lag=Compute_single_delay(PUMP_probe,probe_only,PUMP_only,1,winlen,getCorrels=True)
             fits.append(fit)
+            params.append(param)
             correls.append(correl)
             lags.append(lag)
         else:
@@ -311,7 +313,7 @@ def Compute_Filter_All_Delays(delayvec,delay_scale_fact,missing_data,delaystep,p
 
     #np.savetxt(delayfname,dat)
     if getCorrels == True:                
-        return tshifts, fits, correls, lags
+        return tshifts, fits, params, correls, lags
     else:
         return tshifts
     
