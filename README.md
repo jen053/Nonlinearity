@@ -6,4 +6,4 @@ in the "Thesis" directory; an abstract is provide below.
 This reporsitory and all its contents have been shared to incourage Open Science both to further drive the continuation of research on elastic nonlinearity in geomaterials as well as to incentive Open 
 Science in general. All the data, codes, and figures included in the thesis are provides here.
 
-![alt text](https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Orientation_diagrams_Rev3.PNG)
+![alt text](https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Orientation_diagrams_Rev3.PNG "Title" {width=40px height=400px})
