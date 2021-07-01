@@ -10,27 +10,50 @@ The nonlinear elasticity of geomaterials is a prominent indicator of the materia
 ## Experimental Design
 The nonlinear testing method we employ for this work follows a pump-probe dynamic acousto-elastic testing design in which the perturbation field (i.e. the pump) is a transient wave. Any experiment to test the classical elastic nonlinearity of a medium should aim to characterize the elastic nonlinearity coefficient(s) which scale the nonlinear term(s) of the wave equation. Here we simplify this process by using an indirect measure of a material's classical elastic nonlinearity, namely, a change in wave speed and thus time-of-flight across one of our samples induced by an external strain perturbation (pump wave). We can derive the material, classical elastic nonlinearity by comparing the probe signal with and without the pump wave's presence.
 
-The experimental design we use is shown below. We use an arbitrary waveform generator (Keysight 33500B Series) to excite both the pump and the probe signals. We choose the probe wave to be a low-amplitude (5 V), high-frequency (500 kHz) signal relative to the pump wave's high-amplitude (10 V amplified 50x by a TEGAM HIGH Voltage Amplifier), low-frequency (50 kHz) character. We use a relatively low amplitude for the probe wave to preserve the medium's elastic parameters during the probe's transmission (i.e., the source of perturbation is due exclusively to the pump wave and not the probe). We use a high amplitude for the pump to induce a large enough perturbation to be sensed by the probe wave. We choose the probe and pump frequencies such that the pump wavelength is significantly larger (~ x10) than that of the probe wavelength. This choice results in an approximately steady-state pump wave at the timescale of the probe, thus granting us the ability to sense different phases of the pump waveform with the high-frequency probe. 
+The experimental design we use is shown below. We use an arbitrary waveform generator (Keysight 33500B Series) to excite both the pump and the probe signals. We choose the probe wave to be a low-amplitude (5 V), high-frequency (500 kHz) signal relative to the pump wave's high-amplitude (10 V amplified 50x by a TEGAM HIGH Voltage Amplifier), low-frequency (50 kHz) character. We use a relatively low amplitude for the probe wave to preserve the medium's elastic parameters during the probe's transmission (i.e., the source of perturbation is due exclusively to the pump wave and not the probe). We use a high amplitude for the pump to induce a large enough perturbation to be sensed by the probe wave. We choose the probe and pump frequencies such that the pump wavelength is significantly larger (~ x10) than that of the probe wavelength. This choice results in an approximately steady-state pump wave at the timescale of the probe, thus granting us the ability to sense different phases of the pump waveform with the high-frequency probe.
+### Experimental Setup
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Experimental_Setup.jpg" width = 600>
 </p>
 
+### Orientation Diagrams
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Orientation_diagrams_Rev3.PNG" width = 600>
 </p>
-          
+
+### Cement Samples
 <p align="center">          
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/All_cement_samples.png" width = 600>
 </p>
           
-          
+
+### Pump Wave - Sand Layer Interaction
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Sand_layers_and_pump.png" width = 600>
 </p>
           
-          
+### Pump Wave - Metal Cylinder Interaction          
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/wires_and_pump.png" width = 600>
 </p>
-          
-          
+
+### Supporting Documentation
+We give an extensive bibliography within the actual thesis itself. Here are a few fundamental articles which layout the project's foundation.
+
+1. Gallot, T., Malcolm, A., Szabo, T., Brown, S., Burns, D., & Fehler, M., 2014. Characterizing the nonlinear interaction of s- and p-waves in a rock sample, Journal of Applied Physics, 117.
+
+2. Guyer, R. & Johnson, P., 1999. Nonlinear mesoscopic elasticity: Evidence for a new class of materials, Physics Today - PHYS TODAY, 52, 30–36.
+
+3. Haupert, S., Riviére, J., Anderson, B., Ohara, Y., Ulrich, T., & Johnson, P., 2014. Optimized dynamic acousto-elasticity applied to fatigue damage and stress corrosion cracking, Journal of Nondestructive Evaluation, 33, 1–13.
+
+4. Hayes, L. O., Malcolm, A., Moravej, K., & Butt, S. D., 2018. Nonlinear interactions of p and s waves under uniaxial stress, Proceedings of Meetings on Acoustics, 34(1), 045012.
+
+5. Khajehpour Tadavani, S., Poduska, K., Malcolm, A., & Melnikov, A., 2020. A nonlinear elastic approach to study the effect of ambient humidity on sandstone, Journal of Applied Physics, 128, 244902.
+
+6. Landau, L. & Lifshitz, E., 1986. Theory of elasticity, Course Theor. Phys., 7.
+
+7. Riviére, J., Renaud, G., Guyer, R., & Johnson, P., 2013. Pump and probe waves in dynamic acousto-elasticity: Comprehensive description and comparison with nonlinear elastic theories, Journal of Applied Physics, 114.
+
+8. Rusmanugroho, H., Malcolm, A., & Darijani, M., 2019. A numerical model for the nonlinear interaction of elastic waves with cracks, Wave Motion, 92, 102444.
+
+9. TenCate, J., Malcolm, A., Feng, X., & Fehler, M., 2016. The effect of crack orientation on the nonlinear interaction of a p wave with an s wave: Modulation of p waves by s waves, Geophysical Research Letters, 43.
