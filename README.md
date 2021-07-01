@@ -14,27 +14,49 @@ The experimental design we use is shown below. We use an arbitrary waveform gene
 ### Experimental Setup
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Experimental_Setup.jpg" width = 600>
+          
+          The transient wave dynamic acousto-elastic testing (TW-DAET) experimental setup we employ.
 </p>
 
+### Data Collection Protocol
+The velocity perturbation and thus the probe travel time delay imposed by the pump that we aim to measure is small, on the order of nanoseconds. To measure such a small signal, we adopt the recording workflow developed again by Gallot et al. (2014). The procedure is as follows:
+1. Send and record a probe signal, S1,
+2. Send and record a pump signal, S2,
+3. Send and record a pump and probe signal simultaneously as S3,
+4. Calculate the perturbed probe: S4 = S3 − S2,
+5. Calculate the cross-correlation between the probe signal, S1, and the perturbed probe, S4,
+6. Calculate a parabolic fit using the four points nearest the maximum of the cross-correlation function.
+7. Take the peak of parabolic fit as the time delay between the probe and perturbed probe.
+
+We repeat this process multiple times at different pump transmission delays to evaluate how the elastic nonlinearity changes with varying phases of the pump. In figure
+(2.2), we show a schematical view of one of our samples as we progress through three transmission delay values. At 0 μs, the probe interacts with the pump at a minimum, while at 10 μs, the pump wave has progressed such that the probe senses a maximum. Therefore, as we delay transmission, the probe senses multiple transitions between the pump wave’s positive and negative polarity, allowing for a complete characterization of elastic nonlinearity. We layout the steps of the data collection process in figure (2.3).
 ### Orientation Diagrams
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Orientation_diagrams_Rev3.PNG" width = 600>
+          
+          Here we show the pump-probe orientation diagrams employed during TW-DAET. Orientation one (left) defines the pump and probe propagation directions parallel to x and y, respectively, with each wave, polarized vice-versa. Orientation two (right) defines propagation directions of the pump and probe in x and z, respectively, again with each wave polarized vice-versa.
 </p>
 
 ### Cement Samples
 <p align="center">          
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/All_cement_samples.png" width = 600>
+          
+          Schematic depicting the six prismatic inhomogeneous cement samples on which we complete TW-DAET. Samples A, B, and C consist of embedded unconsolidated sand layers of varying thickness and separation. The inhomogeneities in samples D, E, and F consist of two types of metallic cylinders (metal rods; D and copper wires; E and F) again with varying diameter and separation.
 </p>
           
 
 ### Pump Wave - Sand Layer Interaction
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/Sand_layers_and_pump.png" width = 600>
+          
+          Schematic depicting how the pump wave (red) interacts with horizontal unconsolidated sand layers in orientation one (left) and orientation two (right).
 </p>
           
 ### Pump Wave - Metal Cylinder Interaction          
 <p align="center">
           <img src="https://github.com/jen053/Nonlinearity/blob/master/Images/Set-up/wires_and_pump.png" width = 600>
+          
+          Schematic depicting how the pump wave (red) interacts with a network of Cu wires in orientation one (left) and orientation two (right).
 </p>
 
 ### Supporting Documentation
